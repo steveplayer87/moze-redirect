@@ -18,9 +18,9 @@
     attempted = true;
     window.location.href = 'moze://';
   }
-  // Try launching the app as soon as the landing page opens.
-  // If iOS blocks automatic scheme launches, the visible button remains available.
-  setTimeout(openMoze, 250);
+  // Attempt immediately when the page script loads.
+  // iOS may still require a user gesture to open a custom URL scheme.
+  openMoze();
   link.addEventListener('click', function (event) {
     event.preventDefault();
     attempted = false;
